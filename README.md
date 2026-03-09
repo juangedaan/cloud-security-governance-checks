@@ -1,6 +1,10 @@
 # Cloud Security Governance Checks
 
-A minimal stub that simulates running governance checks (e.g., flagging public S3 buckets). It runs a Python script.
+A lightweight script that loads a JSON list of cloud resources (see `resources.json`) and applies simplified governance rules:
+- flagging S3 buckets marked `public`
+- warning if an EC2 instance has `security_group_open` set to true
+
+This mirrors how basic IaC scanners generate findings.
 
 ```mermaid
 flowchart LR
@@ -14,7 +18,8 @@ flowchart LR
 cloud-security-governance-checks/
 ├── README.md
 ├── requirements.txt
-└── check_security.py
+├── check_security.py
+└── resources.json   # sample data file used by the script
 ```
 
 ## 🚀 Usage

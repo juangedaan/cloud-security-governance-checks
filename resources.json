@@ -1,0 +1,4 @@
+[
+  {"type": "s3_bucket", "name": "public-bucket", "public": true},
+  {"type": "ec2_instance", "name": "web-server", "security_group_open": false}
+]

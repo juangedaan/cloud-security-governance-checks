@@ -1,36 +1,28 @@
-# Cloud Security Governance Checks 🔐📋
+# Cloud Security Governance Checks
 
-This project defines governance checks using AWS Config and a custom AWS Lambda rule to detect publicly accessible S3 buckets.
+A minimal stub that simulates running governance checks (e.g., flagging public S3 buckets). It runs a Python script.
 
-## 🧰 Stack
-
-- AWS CDK (TypeScript)
-- AWS Config Managed + Custom Rules
-- Lambda Function for custom detection logic
-
-## 📊 Architecture
-
-![Architecture](architecture.png)
-
-## 📁 Structure
-
-- `lib/` – CDK stack
-- `lambda/` – Lambda function for custom rule
-- `README.md` – Instructions and architecture
-
-## 🚀 Deploy
-
-```bash
-npm install
-cdk bootstrap
-cdk deploy
+```mermaid
+flowchart LR
+    User --> Script[check_security.py]
+    Script --> Output[Results]
 ```
 
-## ✅ Governance Logic
+## 📂 Structure
 
-- Enables AWS Config recorder
-- Adds managed rules:
-  - `s3-bucket-public-read-prohibited`
-  - `s3-bucket-public-write-prohibited`
-- Adds a custom Lambda rule to flag buckets based on custom tags
+```
+cloud-security-governance-checks/
+├── README.md
+├── requirements.txt
+└── check_security.py
+```
 
+## 🚀 Usage
+
+```bash
+python check_security.py
+```
+
+## 📜 License
+
+MIT License

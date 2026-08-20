@@ -8,8 +8,11 @@ This mirrors how basic IaC scanners generate findings.
 
 ```mermaid
 flowchart LR
-    User --> Script[check_security.py]
-    Script --> Output[Results]
+    Data[resources.json] --> Script[check_security.py]
+    Script --> S3[Public S3 bucket check]
+    Script --> SG[Open security group check]
+    S3 --> Findings[Findings JSON]
+    SG --> Findings
 ```
 
 ## 📂 Structure
